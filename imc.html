@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+   
+    <head>
+                
+        <script type="text/javascript">
+            function calcula_imc(){
+            let altura = document.imcForm.altura.value;
+            var peso = document.imcForm.peso.value;
+
+           // var quadrado = (altura * altura);
+
+            var calculo = peso/(altura*altura);
+
+            if(calculo<18.5){
+            alert("Você está magro com esse indice: " + calculo);
+            }
+            else if(calculo>=18.5 && calculo<24.9){
+            alert("Você está normal com esse indice: " + calculo);
+            }
+
+            else if(calculo>=25 && calculo<29.9) {
+            alert("Você está com sobre peso com esse indice: " + calculo);
+            }
+            else if(calculo>=30 && calculo<39.9) {
+            alert("Você está com obesidade com esse indice: " + calculo);
+            }
+            else if (calculo>40)
+            alert("Você estácom obesidade grave com esse indice: " + calculo);
+            }
+
+        </script>
+
+        <title>Cálculo de IMC</title>
+
+    </head>
+
+    <body>
+
+        <form name="imcForm" id="imcForm" action="#">
+
+            <p>
+                Altura<br />
+                <input type="text" id="altura" name="altura" />
+            </p>
+
+            <p>Peso <br />
+                <input type="text" id="peso" name="peso" />
+            </p>
+
+            <p>
+                <label>
+                <input type="radio" name="sexo" value="opção" id="sexo_0" />
+                Masculino</label>
+                <br />
+                <label>
+                <input type="radio" name="sexo" value="opção" id="sexo_1" />
+                Feminino</label>
+            </p>
+            <p>
+                <input name="Enviar" type="submit" value="Calcular" onclick="calcula_imc()" />
+            </p>
+        </form>
+
+    </body>
+
+</html>
